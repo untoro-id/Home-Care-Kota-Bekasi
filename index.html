@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Home Care Kota Bekasi – Perawatan Kesehatan di Rumah</title>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="wrap nav">
+            <a class="logo" href="#"><span>✚</span>Home Care Kota Bekasi</a>
+            <nav id="menu">
+                <ul>
+                    <li><a href="#layanan">Layanan</a></li>
+                    <li><a href="#cara">Cara Kerja</a></li>
+                    <li><a href="#area">Area</a></li>
+                    <li><a href="#pesan">Pesan</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="tools"><button class="ibtn" id="theme" aria-label="Ganti tema">🌓</button><button class="ibtn" id="burger" aria-label="Menu">☰</button></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <div>
+                    <span class="pill">📍 Melayani seluruh Kota Bekasi</span>
+                    <h1>Perawatan kesehatan <em>profesional</em> langsung di rumah Anda</h1>
+                    <p>Perawat dan tenaga kesehatan berpengalaman datang ke rumah: perawatan lansia, luka, infus, fisioterapi, hingga pemeriksaan laboratorium. Nyaman, aman, dan terjangkau.</p>
+                    <div class="cta"><a class="btn" href="#pesan">Pesan Layanan</a><a class="btn alt" href="#layanan">Lihat Layanan</a></div>
+                    <div class="stats">
+                        <div><b data-n="24">0</b><small>Jam siaga</small></div>
+                        <div><b data-n="12">0</b><small>Kecamatan</small></div>
+                        <div><b data-n="8">0</b><small>Jenis layanan</small></div>
+                    </div>
+                </div>
+                <div class="art">
+                    <div class="big">🏠🩺</div>
+                    <div class="chip">✅ Tenaga kesehatan terlatih</div>
+                    <div class="chip">🧼 Peralatan steril &amp; sekali pakai</div>
+                    <div class="chip">📩 Konsultasi via DM Instagram</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="layanan">
+            <div class="wrap">
+                <div class="head rv"><span class="pill">Layanan Kami</span>
+                    <h2>Apa yang bisa kami bantu?</h2>
+                    <p>Pilih kategori, lalu klik kartu untuk detail layanan.</p>
+                </div>
+                <div class="tabs rv" id="tabs"></div>
+                <div class="grid" id="services"></div>
+                <p class="note" style="text-align:center;margin-top:16px">Tarif adalah contoh ilustrasi. Silakan konfirmasi ke admin.</p>
+            </div>
+        </section>
+
+        <section class="alt-bg" id="cara">
+            <div class="wrap">
+                <div class="head rv"><span class="pill">Cara Kerja</span>
+                    <h2>Mudah dalam 4 langkah</h2>
+                </div>
+                <div class="steps rv">
+                    <div class="step">
+                        <h3>Hubungi kami</h3>
+                        <p>Isi form atau kirim DM Instagram, ceritakan kebutuhan pasien.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Asesmen awal</h3>
+                        <p>Tim menilai kondisi dan merekomendasikan layanan yang tepat.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Petugas datang</h3>
+                        <p>Perawat tiba di rumah sesuai jadwal yang disepakati.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Laporan &amp; tindak lanjut</h3>
+                        <p>Anda menerima ringkasan perawatan dan saran lanjutan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="area">
+            <div class="wrap">
+                <div class="head rv"><span class="pill">Area Layanan</span>
+                    <h2>Jangkauan di Kota Bekasi</h2>
+                    <p>Klik kecamatan untuk melihat estimasi kedatangan.</p>
+                </div>
+                <div class="areas" id="areas"></div>
+                <div id="areaInfo">Pilih kecamatan Anda 👆</div>
+            </div>
+        </section>
+
+        <section class="alt-bg" id="pesan">
+            <div class="wrap">
+                <div class="head rv"><span class="pill">Pemesanan</span>
+                    <h2>Hitung &amp; pesan layanan</h2>
+                    <p>Isi data, lihat estimasi biaya, lalu kirim langsung lewat DM Instagram.</p>
+                </div>
+                <div class="book">
+                    <div class="panel">
+                        <label for="fLayanan">Layanan</label><select id="fLayanan"></select>
+                        <label for="fDurasi">Jumlah kunjungan</label><input type="number" id="fDurasi" min="1" max="30" value="1">
+                        <label for="fNama">Nama pasien</label><input id="fNama" placeholder="Nama lengkap" autocomplete="name">
+                        <label for="fArea">Kecamatan</label><select id="fArea"></select>
+                        <label for="fTgl">Tanggal kunjungan</label><input type="date" id="fTgl">
+                        <label for="fCat">Keluhan / catatan</label><textarea id="fCat" rows="3" placeholder="Contoh: pasien pasca stroke, perlu bantuan mobilisasi"></textarea>
+                        <div style="margin-top:18px">
+                            <div class="note">Estimasi biaya</div>
+                            <div class="total" id="total">Rp 0</div>
+                            <button class="btn" id="send" style="width:100%">Kirim via DM Instagram 📩</button>
+                            <p class="note">Biaya final ditentukan setelah asesmen.</p>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <h3 style="margin-top:0">🧮 Cek BMI cepat</h3>
+                        <div class="bmi">
+                            <div><label for="bb">Berat (kg)</label><input type="number" id="bb" placeholder="65"></div>
+                            <div><label for="tb">Tinggi (cm)</label><input type="number" id="tb" placeholder="165"></div>
+                        </div>
+                        <button class="btn alt" id="hit" style="margin-top:14px;width:100%">Hitung</button>
+                        <div id="bmiOut"></div>
+                        <p class="note">Hanya gambaran umum, bukan diagnosis. Konsultasikan hasil dengan tenaga kesehatan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="wrap" style="max-width:760px">
+                <div class="head rv"><span class="pill">FAQ</span>
+                    <h2>Pertanyaan umum</h2>
+                </div>
+                <details>
+                    <summary>Apakah perawat memiliki izin resmi?</summary>
+                    <p>Pastikan selalu meminta identitas dan STR/SIP petugas sebelum perawatan dimulai.</p>
+                </details>
+                <details>
+                    <summary>Apakah bisa layanan malam atau akhir pekan?</summary>
+                    <p>Ya, tersedia layanan 24 jam termasuk hari libur, dengan kemungkinan tarif tambahan.</p>
+                </details>
+                <details>
+                    <summary>Apakah bisa menggunakan asuransi?</summary>
+                    <p>Tergantung penyedia asuransi. Tanyakan ke admin untuk kwitansi dan dokumen pendukung klaim.</p>
+                </details>
+                <details>
+                    <summary>Bagaimana jika kondisi pasien memburuk?</summary>
+                    <p>Petugas akan melakukan stabilisasi awal dan menyarankan rujukan ke IGD atau rumah sakit terdekat.</p>
+                </details>
+                <div class="emg rv" style="margin-top:30px">
+                    <div>
+                        <h3>🚑 Kondisi darurat?</h3>
+                        <p>Sesak napas berat, nyeri dada, atau penurunan kesadaran: hubungi 119 atau segera ke IGD terdekat.</p>
+                    </div><a class="btn" href="tel:119">Telepon 119</a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap"><b>Home Care Bekasi Kota</b><br>Perawatan kesehatan di rumah untuk keluarga Anda.<br>© <span id="yr"></span> · Informasi di situs ini bukan pengganti saran dokter.</div>
+    </footer>
+    <a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="Instagram DM">📩</a>
+
+    <dialog id="dlg">
+        <h3 id="dT" style="margin-top:0"></h3>
+        <p id="dP"></p>
+        <p><b id="dPr"></b></p>
+        <div style="display:flex;gap:10px"><button class="btn" id="dPick">Pilih layanan ini</button><button class="btn alt" id="dX">Tutup</button></div>
+    </dialog>
+    <dialog id="dm">
+        <h3 style="margin-top:0">📩 Pesan siap dikirim</h3>
+        <p class="note">Instagram tidak bisa mengisi pesan otomatis. Tekan tombol di bawah: pesan akan disalin, lalu DM Instagram terbuka. Tinggal tempel (paste) dan kirim.</p><textarea id="dmTxt" rows="9" readonly></textarea>
+        <p class="note" id="dmHint"></p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" id="dmGo">Salin &amp; buka Instagram</button><button class="btn alt" id="dmX">Batal</button></div>
+    </dialog>
+
+    <script>
+        // Ganti dengan username Instagram admin (tanpa @)
+        var IG = "homecare.kotabekasi";
+        var S = [{
+            c: "Lansia",
+            i: "👵",
+            n: "Perawatan Lansia",
+            d: "Pendampingan harian, mobilisasi, kebersihan diri, dan pemantauan tanda vital.",
+            p: 400000
+        }, {
+            c: "Lansia",
+            i: "🧠",
+            n: "Perawatan Pasca Stroke",
+            d: "Latihan gerak ringan, pemantauan kondisi, dan edukasi keluarga.",
+            p: 350000
+        }, {
+            c: "Medis",
+            i: "🩹",
+            n: "Perawatan Luka",
+            d: "Perawatan luka operasi, diabetes, dan luka tekan dengan teknik modern.",
+            p: 250000
+        }, {
+            c: "Medis",
+            i: "💉",
+            n: "Infus & Injeksi",
+            d: "Pemasangan infus dan injeksi sesuai instruksi dokter.",
+            p: 255000
+        }, {
+            c: "Medis",
+            i: "🧪",
+            n: "Cek Lab di Rumah",
+            d: "Gula darah, kolesterol, asam urat, dan pengambilan sampel.",
+            p: 150000
+        }, {
+            c: "Terapi",
+            i: "🏃",
+            n: "Fisioterapi",
+            d: "Terapi pemulihan otot, sendi, dan saraf oleh fisioterapis.",
+            p: 275000
+        }, {
+            c: "Terapi",
+            i: "👶",
+            n: "Perawatan Bayi & Ibu",
+            d: "Perawatan bayi baru lahir, pijat bayi, dan pendampingan ibu nifas.",
+            p: 225000
+        }, {
+            c: "Terapi",
+            i: "🫁",
+            n: "Nebulizer & Oksigen",
+            d: "Bantuan pernapasan di rumah dengan pemantauan saturasi.",
+            p: 200000
+        }];
+        var A = {
+            "Bekasi Barat": "±30 menit",
+            "Bekasi Selatan": "±25 menit",
+            "Bekasi Timur": "±30 menit",
+            "Bekasi Utara": "±35 menit",
+            "Bantargebang": "±50 menit",
+            "Jatiasih": "±40 menit",
+            "Jatisampurna": "±50 menit",
+            "Medan Satria": "±35 menit",
+            "Mustika Jaya": "±45 menit",
+            "Pondok Gede": "±40 menit",
+            "Pondok Melati": "±40 menit",
+            "Rawalumbu": "±35 menit"
+        };
+        var $ = function(s) {
+            return document.querySelector(s)
+        };
+        var rp = function(n) {
+            return "Rp " + n.toLocaleString("id-ID")
+        };
+        var cats = ["Semua"].concat(S.map(function(x) {
+            return x.c
+        }).filter(function(v, i, a) {
+            return a.indexOf(v) === i
+        }));
+        var cur = "Semua",
+            pick = 0;
+
+        function tabs() {
+            var t = $("#tabs");
+            t.innerHTML = "";
+            cats.forEach(function(c) {
+                var b = document.createElement("button");
+                b.className = "tab" + (c === cur ? " on" : "");
+                b.textContent = c;
+                b.onclick = function() {
+                    cur = c;
+                    tabs();
+                    list()
+                };
+                t.appendChild(b)
+            })
+        }
+
+        function list() {
+            var g = $("#services");
+            g.innerHTML = "";
+            S.forEach(function(s, i) {
+                if (cur !== "Semua" && s.c !== cur) return;
+                var d = document.createElement("div");
+                d.className = "card";
+                d.innerHTML = '<div class="ic">' + s.i + '</div><h3>' + s.n + '</h3><p>' + s.d.slice(0, 70) + '…</p><div class="pr">Mulai ' + rp(s.p) + '</div>';
+                d.onclick = function() {
+                    open_(i)
+                };
+                g.appendChild(d)
+            })
+        }
+
+        function open_(i) {
+            pick = i;
+            var s = S[i];
+            $("#dT").textContent = s.i + " " + s.n;
+            $("#dP").textContent = s.d;
+            $("#dPr").textContent = "Mulai " + rp(s.p) + " / kunjungan";
+            $("#dlg").showModal()
+        }
+        $("#dX").onclick = function() {
+            $("#dlg").close()
+        };
+        $("#dPick").onclick = function() {
+            $("#dlg").close();
+            $("#fLayanan").value = pick;
+            calc();
+            location.hash = "pesan"
+        };
+
+        S.forEach(function(s, i) {
+            var o = document.createElement("option");
+            o.value = i;
+            o.textContent = s.n;
+            $("#fLayanan").appendChild(o)
+        });
+        var ar = $("#areas");
+        Object.keys(A).forEach(function(k) {
+            var b = document.createElement("button");
+            b.className = "area";
+            b.textContent = k;
+            b.onclick = function() {
+                document.querySelectorAll(".area").forEach(function(x) {
+                    x.classList.remove("on")
+                });
+                b.classList.add("on");
+                $("#areaInfo").innerHTML = "Estimasi kedatangan ke <b>" + k + "</b>: " + A[k] + " setelah konfirmasi.";
+                $("#fArea").value = k
+            };
+            ar.appendChild(b);
+            var o = document.createElement("option");
+            o.textContent = k;
+            $("#fArea").appendChild(o)
+        });
+
+        function calc() {
+            var n = Math.max(1, parseInt($("#fDurasi").value) || 1);
+            $("#total").textContent = rp(S[$("#fLayanan").value].p * n)
+        }
+        $("#fLayanan").onchange = calc;
+        $("#fDurasi").oninput = calc;
+        calc();
+        var d = new Date();
+        $("#fTgl").min = $("#fTgl").value = d.toISOString().slice(0, 10);
+        $("#yr").textContent = d.getFullYear();
+
+        $("#send").onclick = function() {
+            var nm = $("#fNama").value.trim();
+            if (!nm) {
+                $("#fNama").focus();
+                alert("Mohon isi nama pasien.");
+                return
+            }
+            var s = S[$("#fLayanan").value];
+            var t = "Halo Home Care Kota Bekasi, saya ingin memesan layanan.\n\nPasien: " + nm + "\nLayanan: " + s.n + "\nKunjungan: " + $("#fDurasi").value + "x\nKecamatan: " + $("#fArea").value + "\nTanggal: " + $("#fTgl").value + "\nCatatan: " + ($("#fCat").value || "-") + "\nEstimasi: " + $("#total").textContent;
+            showDM(t)
+        };
+        $("#fab").href = "https://ig.me/m/" + IG;
+
+        function showDM(t) {
+            $("#dmTxt").value = t;
+            $("#dmHint").textContent = "";
+            $("#dm").showModal()
+        }
+        $("#dmX").onclick = function() {
+            $("#dm").close()
+        };
+        $("#dmGo").onclick = function() {
+            var x = $("#dmTxt");
+            x.select();
+            try {
+                document.execCommand("copy")
+            } catch (e) {}
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(x.value).catch(function() {})
+            }
+            $("#dmHint").textContent = "Pesan disalin. Tempel di chat Instagram lalu kirim.";
+            window.open("https://ig.me/m/" + IG, "_blank")
+        };
+
+        $("#hit").onclick = function() {
+            var b = parseFloat($("#bb").value),
+                h = parseFloat($("#tb").value) / 100,
+                o = $("#bmiOut");
+            o.style.display = "block";
+            if (!b || !h) {
+                o.textContent = "Isi berat dan tinggi badan.";
+                return
+            }
+            var v = b / (h * h),
+                k = v < 18.5 ? "Kurang" : v < 25 ? "Normal" : v < 27 ? "Berlebih" : "Obesitas";
+            o.innerHTML = "BMI Anda <b>" + v.toFixed(1) + "</b>, kategori <b>" + k + "</b> (kriteria Kemenkes).";
+        };
+
+        $("#burger").onclick = function() {
+            $("#menu").classList.toggle("open")
+        };
+        document.querySelectorAll("nav a").forEach(function(a) {
+            a.onclick = function() {
+                $("#menu").classList.remove("open")
+            }
+        });
+        $("#theme").onclick = function() {
+            var r = document.documentElement,
+                dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme:dark)").matches;
+            r.dataset.theme = dark ? "light" : "dark"
+        };
+
+        var io = new IntersectionObserver(function(e) {
+            e.forEach(function(x) {
+                if (x.isIntersecting) {
+                    x.target.classList.add("in");
+                    io.unobserve(x.target)
+                }
+            })
+        }, {
+            threshold: .15
+        });
+        document.querySelectorAll(".rv").forEach(function(e) {
+            io.observe(e)
+        });
+        var co = new IntersectionObserver(function(e) {
+            e.forEach(function(x) {
+                if (!x.isIntersecting) return;
+                var el = x.target,
+                    t = +el.dataset.n,
+                    c = 0,
+                    iv = setInterval(function() {
+                        c += Math.ceil(t / 20);
+                        if (c >= t) {
+                            c = t;
+                            clearInterval(iv)
+                        }
+                        el.textContent = c
+                    }, 40);
+                co.unobserve(el)
+            })
+        });
+        document.querySelectorAll("[data-n]").forEach(function(e) {
+            co.observe(e)
+        });
+        tabs();
+        list();
+    </script>
+</body>
+
+</html>
